@@ -2,16 +2,51 @@
   margin: 0;
   padding: 0;
 }
+body {
+  overflow: hidden;
+}
 
 .banner-container {
   width: 100%;
-  background-color: rgb(247, 247, 156);
-  height: 500px;
+  background-color: rgb(#000, rgb(31, 33, 31), rgb(9, 9, 19), 0.5);
+  /* opacity: 0.5; */
+  height: 80vh;
   border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 10px 5px;
+  margin: 0 5px;
+  /* background-image: url("../assets/blessed.jpg"); */
+  background-position: center;
+  background-size: cover;
+  background-color: transparent;
+  overlay: unset;
+  position: relative;
 }
 .mood {
+  font-size: 40px;
+  font-weight: 800;
+  background-color: #000;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  transform: translateX(-30px);
+}
+
+.select-mood {
+  position: absolute;
+  right: 30px;
+  top: 30px;
+}
+
+.select-mood select {
+  cursor: pointer;
+  outline: none;
+  padding: 4px;
+  margin-left: 3px;
+}
+
+.select-mood label {
+  font-size: medium;
+  font-weight: 500;
 }
