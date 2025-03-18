@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.banner-container {
+  width: 100%;
+  background-color: rgb(247, 247, 156);
+  height: 500px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 5px;
+}
+.mood {
+}
