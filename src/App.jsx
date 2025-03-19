@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { CurrentMood } from "./constant/data";
 
 function App() {
   const [selectMood,setSelectMood] = useState(CurrentMood.Thankful.text)
   const [currentImg,setCurrentImg] = useState(CurrentMood.Thankful.bg)
+  const [animate,setAnimate] = useState(CurrentMood.Thankful.animation)
+  const [value,setValue] = useState('Thankful')
 
 
 
@@ -12,18 +14,21 @@ function App() {
       const currentMood = e.target.value
       setSelectMood( CurrentMood[currentMood].text)
       setCurrentImg(CurrentMood[currentMood].bg)
+      setAnimate(CurrentMood[currentMood].animation)
+      setValue(currentMood)
 }
 
+console.log(selectMood)
 
-
-  return <div className="banner-container" style={{ backgroundImage: `url('/${currentImg}')` }}>
-    <h1 className="mood">{selectMood}</h1>
-       <div className="mt-5 select-mood ">
-        <label className="text-lg font-medium"> Select your currrent mood: </label>
+  return <div className="banner-container" style={{ backgroundImage: `url('${currentImg}')` }}>
+      <div className="mt-5 select-mood ">
+        <h2 className="logo">Mood Day</h2>
+       <div className="form">
+         <label className="text-lg font-medium"> Select your currrent mood: </label>
         <select
           className="ml-2 p-2 border rounded-lg text-gray-700"
           onChange={handleMoodChange}
-          value={selectMood}
+          value={value}
 
         >
           {Object.keys(CurrentMood).map((m)=>(
@@ -34,7 +39,12 @@ function App() {
           ))}
           
         </select>
+       </div>
       </div>
+  <div className="mood">
+      <h1 className={` ${animate}`}>{selectMood}</h1>
+  </div>
+     
   </div>;
 }
 
