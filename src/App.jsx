@@ -20,7 +20,7 @@ function App() {
 
 console.log(selectMood)
 
-  return <div className="banner-container" style={{ backgroundImage: `url('${currentImg}')` }}>
+  return <div className="banner-container" data-testid="banner" style={{ backgroundImage: `url('${currentImg}')` }}>
       <div className="mt-5 select-mood ">
         <h2 className="logo">Mood Day</h2>
        <div className="form">
