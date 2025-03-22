@@ -12,7 +12,7 @@ function App() {
 
   function handleMoodChange(e){
       const currentMood = e.target.value
-      setSelectMood( CurrentMood[currentMood].text)
+      setSelectMood( CurrentMood[currentMood]?.text)
       setCurrentImg(CurrentMood[currentMood].bg)
       setAnimate(CurrentMood[currentMood].animation)
       setValue(currentMood)
